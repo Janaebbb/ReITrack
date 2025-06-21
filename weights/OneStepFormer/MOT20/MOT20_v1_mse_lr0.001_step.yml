@@ -1,0 +1,23 @@
+Base:
+  exp_name: MOT20_v1_mse_lr0.001_step
+Train:
+  max_epoch: 40
+  save_interval: 2
+  data_dir: /home/share/workspace/datasets/MOT20/motion/motion_OSFormer_MOT20_train_s30p10.pkl
+  val_data_dir: /home/share/workspace/datasets/mot/motion_OSFormer_mot_val_half.pkl
+  output_dir: /home/share/workspace/Motion_Warehouse/exp_result/OneStepFormer/MOT20/MOT20_v1_mse_lr0.001_step
+  loss_type: mse
+  exp_v: '1'
+Motion Model:
+  model_name: OneStepFormer
+  seq_len: 30
+  pred_len: 10
+  in_dim: 4
+  mhsa_dim: 32
+  mhsa_d_ff: 64
+  num_heads: 4
+  dropout: 0.1
+  activation: relu
+  e_layers: 2
+  d_layers: 1
+  motion_out_dim: 4
